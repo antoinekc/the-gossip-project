@@ -1,0 +1,16 @@
+<! DOCTYPE html>
+
+<h3>
+
+<p> USER: <%= @gossip.user.first_name %> </p> 
+
+<p> TITRE: <%= @gossip.title %> </p> 
+
+<%= link_to "Author ", user_path(params[:id]) %>
+
+<p><strong>Author :</strong> <%= link_to @gossip.user.first_name, user_path(@gossip.user)%></p>
+
+</h3>
+
+</html>
+

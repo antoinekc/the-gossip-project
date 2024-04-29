@@ -1,0 +1,31 @@
+<h1>Home#index</h1>
+
+<html>
+  <head>
+    <title>Tout savoir sur tous les gossips de THP</title>
+  </head>
+  <body>
+      
+      <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div class="card-body">
+      <% @gossips.each do |gossip| %>
+        <h5 class="card-title" ><%= gossip.title %><%= gossip.user.first_name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </p>
+      <% end %>
+      </div>
+    </div>
+
+
+    <% @gossips.each do |gossip| %>
+      <p>
+      <%= gossip.title %>
+      <%= gossip.user.first_name %>
+      </p>
+      <% end %>
+
+  </body>
+</html>
+
