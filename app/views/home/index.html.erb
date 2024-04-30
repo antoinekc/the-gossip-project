@@ -1,24 +1,36 @@
-<h1>Home#index</h1>
-
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tout savoir sur tous les gossips de THP</title>
-  </head>
-  <body>
-      
-  <div class="container">
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Container for cards with increased top margin -->
+<div class="container mt-5">
+  <div class="row">
     <% @gossips.each do |gossip| %>
-      <div class="card mb-3" style="max-width: 18rem;">
-        <div class="card-header">Featured</div>
-        <div class="card-body">
-          <h5 class="card-title"><%= gossip.title %></h5>
-          <p class="card-text">Created by: <%= gossip.user.first_name %></p>
-          <!-- You can add more content here if needed -->
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <div class="card-header">Gossip <%= gossip.id %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.title %></h5>
+            <p class="card-text">Created by: <%= gossip.user.first_name %></p>
+            <p> 
+              <a href= "<%= gossip_path(gossip.id) %>" class= "btn btn-danger ">Lire la suite</a> 
+            </p>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
+</div>
 
-  </body>
+<!-- Include Bootstrap JS (optional if you need Bootstrap JavaScript functionality) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
 

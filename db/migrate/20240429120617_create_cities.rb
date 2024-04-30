@@ -4,6 +4,7 @@ class CreateCities < ActiveRecord::Migration[7.1]
       t.string :name
       t.integer :zip_code
       t.timestamps
+      
     end
   end
 end

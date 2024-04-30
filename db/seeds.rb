@@ -23,15 +23,14 @@ end
 #créer 10 utilisateurs aléatoires
 users = []
 10.times do
-    user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraph(sentence_count:5), email: Faker::Internet.email, age: Faker::Number.between(from: 13, to: 60))
+    user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraph(sentence_count:5), email: Faker::Internet.email, city_id: rand(1..10) , age: Faker::Number.between(from: 13, to: 60))
     users << user
-    user.city = cities.sample
 end
 
 #créer 10 gossips aléatoires
 gossips = []
 20.times do
-    gossip = Gossip.create!(title: Faker::Hacker.say_something_smart, description: Faker::Lorem.paragraph(sentence_count:5), user: users.sample)
+    gossip = Gossip.create!(title: Faker::Hacker.say_something_smart[3,14], description: Faker::Lorem.words(number: 1), user: users.sample)
     gossips << gossip
 end
 

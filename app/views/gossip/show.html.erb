@@ -1,16 +1,48 @@
-<! DOCTYPE html>
-
-<h3>
-
-<p> USER: <%= @gossip.user.first_name %> </p> 
-
-<p> TITRE: <%= @gossip.title %> </p> 
-
-<%= link_to "Author ", user_path(params[:id]) %>
-
-<p><strong>Author :</strong> <%= link_to @gossip.user.first_name, user_path(@gossip.user)%></p>
-
-</h3>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .gossip-container {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .author-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .author-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Gossip !!! </h3>
+        <div class="gossip-container">
+            <p><strong>User:</strong> <%= @gossip.user.first_name %></p>
+            <p><strong>Title:</strong> <%= @gossip.title %></p>
+            <p><strong>Author:</strong> <a class="author-link" href="<%= user_path(@gossip.user) %>"><%= @gossip.user.first_name %></a></p>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS (optional if you need Bootstrap JavaScript functionality) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
-

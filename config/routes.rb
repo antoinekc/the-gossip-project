@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'user/:id', to: 'user#show', as: 'user'
 
-  get 'gossip/:id', to: 'gossip#show'
+  #get 'gossip/:id', to: 'gossip#show'
+
+  resources :gossip
 
   get 'home/index'
   
